@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:id="addDialogPane" minHeight="500.0"
+	minWidth="400.0" prefHeight="500.0" prefWidth="400.0"
+	style="-fx-background-color: rgb(148, 126, 103); -fx-border-color: white;"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller.EditSprintController">
+	<content>
+		<VBox>
+			<children>
+				<VBox spacing="15.0">
+					<children>
+						<HBox>
+							<children>
+								<Label text="Description : " textFill="WHITE" />
+								<JFXTextArea fx:id="descriptionTextArea"
+									focusColor="WHITE" prefHeight="200.0" prefWidth="300.0"
+									promptText="write some Notes. . ."
+									style="-fx-text-fill: white;" unFocusColor="#f5f3f3">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</JFXTextArea>
+							</children>
+						</HBox>
+						<HBox>
+							<children>
+								<Label text="Notes :          " textFill="WHITE" />
+								<JFXTextArea fx:id="notesTextArea"
+									focusColor="WHITE" prefHeight="200.0" prefWidth="300.0"
+									promptText="write some Notes. . ."
+									style="-fx-text-fill: white;" unFocusColor="#f5f3f3">
+									<font>
+										<Font size="14.0" />
+									</font>
+								</JFXTextArea>
+							</children>
+						</HBox>
+						<HBox>
+							<children>
+								<Label text="Start : " textFill="#efedeb">
+									<font>
+										<Font name="Noto Mono" size="16.0" />
+									</font>
+								</Label>
+								<JFXDatePicker fx:id="startDatepicker"
+									defaultColor="#030306" prefHeight="33.0" prefWidth="196.0"
+									style="-fx-text-fill: white;">
+									<padding>
+										<Insets left="2.0" />
+									</padding>
+								</JFXDatePicker>
+							</children>
+						</HBox>
+						<HBox>
+							<children>
+								<Label text="End   : " textFill="#efedeb">
+									<font>
+										<Font name="Noto Mono" size="16.0" />
+									</font>
+								</Label>
+								<JFXDatePicker fx:id="endDatePicker"
+									defaultColor="#030306" prefHeight="33.0" prefWidth="196.0"
+									style="-fx-text-fill: white;">
+									<padding>
+										<Insets left="2.0" />
+									</padding>
+								</JFXDatePicker>
+							</children>
+						</HBox>
+						<AnchorPane>
+							<children>
+								<JFXButton fx:id="saveBtn" layoutX="134.0"
+									layoutY="12.0" onAction="#editSprint" prefHeight="32.0"
+									prefWidth="110.0" style="-fx-background-color: #9B897B;"
+									text="Save" textFill="#fcf7f7">
+									<ripplerFill>
+										<LinearGradient cycleMethod="REPEAT" endX="1.0"
+											endY="0.3015872773670015">
+											<stops>
+												<Stop color="#916f0d" />
+												<Stop color="#e1aa80" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</ripplerFill>
+									<font>
+										<Font name="Arial" size="16.0" />
+									</font>
+								</JFXButton>
+							</children>
+						</AnchorPane>
+					</children>
+				</VBox>
+			</children>
+		</VBox>
+	</content>
+	<header>
+		<AnchorPane prefHeight="30.0">
+			<children>
+				<Label layoutX="171.0" layoutY="7.0" text="Edit Sprint"
+					textFill="WHITE" />
+				<AnchorPane layoutX="358.0">
+					<children>
+						<JFXButton fx:id="exitBtn" contentDisplay="CENTER"
+							graphicTextGap="0.0" onAction="#exit" text=" "
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<graphic>
+								<ImageView fx:id="closeImageView" fitHeight="20.0"
+									fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+							</graphic>
+						</JFXButton>
+					</children>
+				</AnchorPane>
+			</children>
+		</AnchorPane>
+	</header>
+</DialogPane>

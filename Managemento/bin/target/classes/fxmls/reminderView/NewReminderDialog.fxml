@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:id="addDialogPane" minHeight="400.0"
+	prefHeight="400.0" style="-fx-background-color: #675B52;"
+	styleClass="text-field" 
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller.remindercontroller.NewReminderController">
+	<header>
+		<HBox fillHeight="false" prefHeight="70.0">
+			<children>
+				<Label text="Title: " textFill="#efedeb">
+					<font>
+						<Font name="Noto Mono" size="16.0" />
+					</font>
+					<HBox.margin>
+						<Insets left="20.0" top="25.0" />
+					</HBox.margin>
+				</Label>
+				<JFXTextField fx:id="title" focusColor="#d7a47d"
+					maxWidth="180.0" minWidth="180.0">
+					<HBox.margin>
+						<Insets top="22.0" />
+					</HBox.margin>
+					<effect>
+						<Reflection fraction="0.3" topOpacity="0.12" />
+					</effect>
+				</JFXTextField>
+			</children>
+		</HBox>
+	</header>
+	<content>
+		<VBox maxWidth="200.0" prefHeight="200.0" prefWidth="200.0">
+			<children>
+				<FlowPane prefHeight="200.0" prefWidth="200.0">
+					<children>
+						<JFXTextArea fx:id="comment" focusColor="WHITE"
+							prefHeight="100.0" prefWidth="300.0"
+							promptText="write some Notes. . ." style="-fx-text-fill: white;"
+							unFocusColor="#f5f3f3">
+							<FlowPane.margin>
+								<Insets bottom="15.0" />
+							</FlowPane.margin>
+							<font>
+								<Font size="14.0" />
+							</font>
+						</JFXTextArea>
+						<Label text="Date:" textFill="#efedeb">
+							<FlowPane.margin>
+								<Insets left="15.0" />
+							</FlowPane.margin>
+							<font>
+								<Font name="Noto Mono" size="16.0" />
+							</font>
+						</Label>
+						<JFXDatePicker fx:id="date" defaultColor="#d7a47d"
+							prefHeight="33.0" prefWidth="196.0" style="-fx-text-fill: white;">
+							<padding>
+								<Insets left="2.0" />
+							</padding>
+							<FlowPane.margin>
+								<Insets left="10.0" />
+							</FlowPane.margin>
+						</JFXDatePicker>
+						<Label text="Time:" textFill="#efedeb">
+							<font>
+								<Font name="Noto Mono" size="16.0" />
+							</font>
+							<FlowPane.margin>
+								<Insets left="15.0" top="20.0" />
+							</FlowPane.margin>
+						</Label>
+						<JFXTimePicker fx:id="time" defaultColor="#d7a47d"
+							prefHeight="33.0" prefWidth="196.0">
+							<FlowPane.margin>
+								<Insets left="10.0" top="20.0" />
+							</FlowPane.margin>
+							<padding>
+								<Insets left="2.0" />
+							</padding>
+						</JFXTimePicker>
+					</children>
+				</FlowPane>
+				<GridPane>
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES"
+							minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints hgrow="SOMETIMES"
+							minWidth="10.0" prefWidth="100.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="30.0"
+							vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<JFXButton id="saveBtn" fx:id="saveBtn"
+							onAction="#saveNewMemento" prefHeight="20.0" prefWidth="120.0"
+							style="-fx-background-color: #9B897B;" text="Save"
+							textFill="#fcf7f7" GridPane.columnIndex="1" GridPane.rowIndex="2">
+							<ripplerFill>
+								<LinearGradient cycleMethod="REPEAT" endX="1.0"
+									endY="1.0">
+									<stops>
+										<Stop color="#916f0d" />
+										<Stop color="#e1aa80" offset="1.0" />
+									</stops>
+								</LinearGradient>
+							</ripplerFill>
+							<GridPane.margin>
+								<Insets left="30.0" />
+							</GridPane.margin>
+							<font>
+								<Font name="Arial" size="16.0" />
+							</font>
+						</JFXButton>
+					</children>
+				</GridPane>
+			</children>
+		</VBox>
+	</content>
+</DialogPane>

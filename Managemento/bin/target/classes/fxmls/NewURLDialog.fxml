@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:id="addDialogPane" minHeight="250.0"
+	minWidth="400.0" prefHeight="250.0" prefWidth="400.0"
+	style="-fx-background-color: rgb(148, 126, 103); -fx-border-color: white;"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller.NewURLController">
+	<content>
+		<VBox>
+			<children>
+				<VBox spacing="15.0">
+					<children>
+						<AnchorPane prefHeight="35.0">
+							<children>
+								<Label graphicTextGap="0.0" text="Name : "
+									textFill="WHITE" AnchorPane.bottomAnchor="0.0"
+									AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+								<JFXTextField fx:id="urlNameTextField"
+									focusColor="#e1e1e1" layoutX="48.0" prefHeight="35.0"
+									prefWidth="330.0" style="-fx-text-fill: white;"
+									unFocusColor="#c3c3c3" AnchorPane.bottomAnchor="0.0"
+									AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="0.0"
+									AnchorPane.topAnchor="0.0" />
+							</children>
+						</AnchorPane>
+						<AnchorPane prefHeight="35.0">
+							<children>
+								<Label text="URL :  " textFill="WHITE"
+									AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+									AnchorPane.topAnchor="0.0" />
+								<JFXTextField fx:id="urlTextField"
+									focusColor="WHITE" layoutX="48.0" prefHeight="35.0"
+									prefWidth="330.0" style="-fx-text-fill: white;"
+									unFocusColor="#c3c3c3" AnchorPane.bottomAnchor="0.0"
+									AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="0.0"
+									AnchorPane.topAnchor="0.0" />
+							</children>
+						</AnchorPane>
+						<AnchorPane>
+							<children>
+								<JFXButton fx:id="saveBtn" layoutX="134.0"
+									layoutY="12.0" onAction="#saveNewURL" prefHeight="32.0"
+									prefWidth="110.0" style="-fx-background-color: #9B897B;"
+									text="Save" textFill="#fcf7f7">
+									<ripplerFill>
+										<LinearGradient cycleMethod="REPEAT" endX="1.0"
+											endY="0.3015872773670015">
+											<stops>
+												<Stop color="#916f0d" />
+												<Stop color="#e1aa80" offset="1.0" />
+											</stops>
+										</LinearGradient>
+									</ripplerFill>
+									<font>
+										<Font name="Arial" size="16.0" />
+									</font>
+								</JFXButton>
+							</children>
+						</AnchorPane>
+					</children>
+				</VBox>
+			</children>
+		</VBox>
+	</content>
+	<header>
+		<AnchorPane prefHeight="50.0">
+			<children>
+				<Label layoutX="165.0" layoutY="5.0" text="New URL"
+					textFill="WHITE" />
+				<AnchorPane layoutX="358.0">
+					<children>
+						<JFXButton fx:id="exitBtn" contentDisplay="CENTER"
+							graphicTextGap="0.0" onAction="#exit" text=" "
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<graphic>
+								<ImageView fx:id="closeImageView" fitHeight="20.0"
+									fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+							</graphic>
+						</JFXButton>
+					</children>
+				</AnchorPane>
+			</children>
+		</AnchorPane>
+	</header>
+</DialogPane>
